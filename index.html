@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xprofess — Build the future</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=operational" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" onclick="showPage('home')">
+      <img src="img/logo/logo.png" alt="Xprofess" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span class="logo-fallback">Xprofess</span>
+    </a>
+    <div class="nav-links">
+      <a href="#" onclick="showPage('home')" class="nav-link">Accueil</a>
+      <a href="#" onclick="showPage('studio')" class="nav-link">Studio</a>
+      <a href="#" onclick="showPage('work')" class="nav-link">Projets</a>
+      <a href="#" onclick="showPage('lab')" class="nav-link">Lab</a>
+      <a href="#" onclick="showPage('team')" class="nav-link">Équipe</a>
+      <a href="#" onclick="showPage('contact')" class="nav-link nav-cta">Contact</a>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="showPage('home'); toggleMenu()">Accueil</a>
+  <a href="#" onclick="showPage('studio'); toggleMenu()">Studio</a>
+  <a href="#" onclick="showPage('work'); toggleMenu()">Projets</a>
+  <a href="#" onclick="showPage('lab'); toggleMenu()">Lab</a>
+  <a href="#" onclick="showPage('team'); toggleMenu()">Équipe</a>
+  <a href="#" onclick="showPage('contact'); toggleMenu()">Contact</a>
+</div>
+
+<!-- ===================== PAGE: HOME ===================== -->
+<div class="page active" id="page-home">
+
+  <!-- CANVAS -->
+  <canvas id="heroCanvas"></canvas>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Studio Technologique · Laboratoire d'Ingénierie · Créateur du future
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line" data-text="Xprofess"><span class="x">X</span>profess</span>
+      </h1>
+      <p class="hero-sub">Build the future.</p>
+      <p class="hero-desc">Un studio technologique qui conçoit des systèmes,<br>des logiciels et des produits informatiques.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="showPage('contact')">
+          <span>Démarrer un projet</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="btn btn-ghost" onclick="showPage('lab')">
+          <span>Explorer le lab</span>
+        </button>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span>défiler</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS XPROFESS -->
+  <section class="section section-what">
+    <div class="container">
+      <div class="what-grid">
+        <div class="what-left">
+          <span class="section-label">À propos</span>
+          <div class="glow-line"></div>
+        </div>
+        <div class="what-right">
+          <h2 class="section-title">Un studio pour une technologie<br><em>ambitieuse</em>.</h2>
+          <p class="section-text">Xprofess est un studio technologique dédié à la création de systèmes numériques puissants. Nous construisons les produits informatiques qui font passer les entreprises de l'idée à la domination du marché.<br> Pour les entreprises ambitieuses qui veulent structurer, automatiser et accélérer leur croissance grace à la technologie.</p>
+          <div class="stat-row">
+            <div class="stat">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">Possibilités</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">01</span>
+              <span class="stat-label">Studio</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">∀</span>
+              <span class="stat-label">Industries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD -->
+  <section class="section section-build">
+    <div class="container">
+      <div class="build-header">
+        <span class="section-label">Compétences</span>
+        <h2 class="section-title">Ce que nous <em>construisons</em>.</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card" data-index="01">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="4" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="4" y="18" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M23 18v10M18 23h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Systèmes informatiques</h3>
+          <p>Plateformes et logiciels évolutifs conçus pour la prochaine génération d'entreprises.</p>
+          <div class="card-glow"></div>
+        </div>
+        <div class="card" data-index="02">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/><path d="M16 10v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Produit informatique</h3>
+          <p>De l'idée à la technologie fonctionnelle. Nous prenons vos concepts et les livrons au monde.</p>
+          <div class="card-glow"></div>
+        </div>
+        <div class="card" data-index="03">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 26l8-8 4 4 8-12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="26" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Conceptions optimisées par IA</h3>
+          <p>Des systèmes ultra moderne qui fonctionnent de manière optimale. Nous intégrons l'intelligence artificielle dans l'optimisation de nos différents concepts.</p>
+          <div class="card-glow"></div>
+        </div>
+        <div class="card" data-index="04">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M4 16h6l4-8 4 16 4-12 4 4h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Technologie Expérimentale</h3>
+          <p>Des idées audacieuses transformées en produits. La frontière de ce que la technologie peut devenir.</p>
+          <div class="card-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENTURE BUILDER STRIP -->
+  <section class="section section-venture">
+    <div class="container">
+      <div class="venture-inner">
+        <div class="venture-text">
+          <span class="section-label">Créateur du future</span>
+          <h2>Nous ne faisons pas que créer des produits.<br>Nous <em>bâtissons le futur.</em>.</h2>
+          <p>Xprofess explore des idées ambitieuses et transforme l'invisible en projets technologiques concrets.</p>
+          <button class="btn btn-outline" onclick="showPage('studio')">Découvrir le Studio →</button>
+        </div>
+        <div class="venture-visual">
+          <div class="orbit-container">
+            <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+            <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
+            <div class="orbit orbit-3"><div class="orbit-dot"></div></div>
+            <div class="orbit-center">Xp</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Studio Technologique</span><span class="sep">·</span>
+      <span>Laboratoire d'Ingénierie</span><span class="sep">·</span>
+      <span>Créateur du future</span><span class="sep">·</span>
+      <span>Bâtisseurs d'Innovation</span><span class="sep">·</span>
+      <span>Build the Future</span><span class="sep">·</span>
+      <span>Studio Technologique</span><span class="sep">·</span>
+      <span>Laboratoire d'Ingénierie</span><span class="sep">·</span>
+      <span>Créateur du future</span><span class="sep">·</span>
+      <span>Bâtisseurs d'Innovation</span><span class="sep">·</span>
+      <span>Build the Future</span><span class="sep">·</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="img/logo/logo.png" alt="Xprofess" class="logo-img logo-img-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="logo-fallback">Xprofess</span>
+          <p>Build the future.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#" onclick="showPage('studio')">Studio</a>
+          <a href="#" onclick="showPage('work')">Projets</a>
+          <a href="#" onclick="showPage('lab')">Lab</a>
+          <a href="#" onclick="showPage('team')">Équipe</a>
+          <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Xprofess. Tous droits réservés.</span>
+        <span class="footer-tag">Studio Technologique</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ===================== PAGE: STUDIO ===================== -->
+<div class="page" id="page-studio">
+  <!-- CANVAS -->
+  <canvas id="heroCanvas"></canvas>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Studio</span>
+      <h1 class="page-title">Nous sommes le<br><em>studio</em> derrière<br>les grandes idées.</h1>
+      <p class="page-desc">Xprofess opère comme un studio technologique à spectre complet — de la recherche à la conception au développement à l'ingénierie et au déploiement. Nous initions les technologies modernes à priori et nos différents collaborateurs si nécessaire.</p>
+    </div>
+    <div class="page-hero-bg">
+      <div class="grid-overlay"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="studio-process">
+        <h2 class="section-title">Comment nous <em>opérons</em>.</h2>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3>Recherche & Découverte</h3>
+              <p>Nous cartographions l'espace du problème avant d'écrire la moindre ligne de code. Recherche approfondie, pensée systémique, analyse concurrentielle.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3>Architecture & Design</h3>
+              <p>Architecture système, design produit et spécification technique. Nous construisons le plan avant le bâtiment.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3>Ingénierie & Développement</h3>
+              <p>Ingénierie full-stack, Interface intuitive, moderne et agréable, développement logiciel performant. Nous livrons des systèmes en production, pas des démos.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h3>Lancement & Croissance</h3>
+              <p>Déploiement, surveillance, optimisation. Nous ne disparaissons pas après le lancement — nous grandissons avec vous.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="studio-identity">
+        <div class="identity-col">
+          <h2>Studio Technologique</h2>
+          <p>Un studio qui conçoit et développe des produits informatiques à l'intersection de la performance, de l'innovation et de l'esthétique.</p>
+        </div>
+        <div class="identity-col">
+          <h2>Laboratoire d'Ingénierie</h2>
+          <p>Un laboratoire qui expérimente avec les technologies émergentes, modernes et performantes,  — et livre des produits fonctionnels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="img/logo/logo.png" alt="Xprofess" class="logo-img logo-img-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="logo-fallback">Xprofess</span>
+          <p>Build the future.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#" onclick="showPage('home')">Accueil</a>
+          <a href="#" onclick="showPage('work')">Projets</a>
+          <a href="#" onclick="showPage('lab')">Lab</a>
+          <a href="#" onclick="showPage('team')">Équipe</a>
+          <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Xprofess. Tous droits réservés.</span>
+        <span class="footer-tag">Studio Technologique</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== PAGE: WORK ===================== -->
+<div class="page" id="page-work">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Projets</span>
+      <h1 class="page-title">Construit avec<br><em>précision</em>.</h1>
+      <p class="page-desc">Une sélection de projets, systèmes et produits développés par Xprofess.</p>
+    </div>
+    <div class="page-hero-bg"><div class="grid-overlay"></div></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="work-grid">
+
+        <!-- WORK ITEM 01 — onclick lightbox -->
+        <div class="work-item" onclick="openLightbox('plateforme', 'Plateforme Web Sur-Mesure', 'Plateforme')">
+          <div class="work-meta">
+            <span class="work-num">01</span>
+            <span class="work-tag">Plateforme</span>
+          </div>
+          <h3>Plateforme Web Sur-Mesure</h3>
+          <p>Une plateforme full-stack conçue pour l'apprentissage en ligne — authentification, pipelines de données, tableau de bord en temps réel.</p>
+          <div class="work-tech">
+            <span>js</span><span>Node.js</span><span>MySQL</span>
+          </div>
+          <div class="work-arrow">→</div>
+        </div>
+
+        <!-- WORK ITEM 02 — onclick lightbox -->
+        <div class="work-item" onclick="openLightbox('logiciel', 'Logiciel Desktop', 'Logiciel')">
+          <div class="work-meta">
+            <span class="work-num">02</span>
+            <span class="work-tag">Logiciel</span>
+          </div>
+          <h3>Logiciel Desktop</h3>
+          <p>Un système de gestion bancaire qui a réduit les opérations manuelles de 80% pour une entreprise en pleine croissance.</p>
+          <div class="work-tech">
+            <span>JAVA</span><span>POO/IA</span><span>MySQL</span>
+          </div>
+          <div class="work-arrow">→</div>
+        </div>
+
+        <!-- WORK ITEM 03 — onclick lightbox -->
+        <div class="work-item" onclick="openLightbox('startup', 'Prototype Startup', 'Startup')">
+          <div class="work-meta">
+            <span class="work-num">03</span>
+            <span class="work-tag">Startup</span>
+          </div>
+          <h3>Prototype Startup</h3>
+          <p>De zéro au MVP en 10 semaines. Un prototype de gestion d'empreinte digitale (produit privé testé et validé par les collaborateurs) pas de lancement officiel à ce stade.</p>
+          <div class="work-tech">
+            <span>Flutter/dart</span><span>Firebase</span><span>Mobile</span>
+          </div>
+          <div class="work-arrow">→</div>
+        </div>
+
+        <!-- WORK ITEM 04 — onclick lightbox -->
+        <div class="work-item" onclick="openLightbox('application', 'Application web', 'Application')">
+          <div class="work-meta">
+            <span class="work-num">04</span>
+            <span class="work-tag">Application</span>
+          </div>
+          <h3>Application web</h3>
+          <p>Une application full-stack conçue pour la gestion d'un établissement scolaire — authentification, pipelines de données, tableau de bord en temps réel.</p>
+          <div class="work-tech">
+            <span>Next.js</span><span>IA/POO</span><span>MySQL</span>
+          </div>
+          <div class="work-arrow">→</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <div class="container">
+      <h2>Vous avez un projet en tête ?</h2>
+      <button class="btn btn-primary" onclick="showPage('contact')">Démarrer un projet →</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="img/logo/logo.png" alt="Xprofess" class="logo-img logo-img-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="logo-fallback">Xprofess</span>
+          <p>Build the future.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#" onclick="showPage('home')">Accueil</a>
+          <a href="#" onclick="showPage('studio')">Studio</a>
+          <a href="#" onclick="showPage('lab')">Lab</a>
+          <a href="#" onclick="showPage('team')">Équipe</a>
+          <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Xprofess. Tous droits réservés.</span>
+        <span class="footer-tag">Studio Technologique</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== PAGE: LAB ===================== -->
+<div class="page" id="page-lab">
+  <section class="page-hero lab-hero">
+    <div class="container">
+      <span class="section-label">Recherche & Expérimentation</span>
+      <h1 class="page-title">Xprofess<br><em>Lab</em>.</h1>
+      <p class="page-desc">Le lab est là où les idées deviennent technologie. Nous explorons des systèmes, des outils et des concepts qui pourraient définir l'avenir.</p>
+    </div>
+    <div class="lab-grid-bg"></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="lab-intro">
+        <p class="lab-quote">« Le lab n'est pas qu'une salle. C'est un état d'esprit. Nous construisons ce qui n'a pas encore été construit, pour comprendre ce qui n'a pas encore été compris. »</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Expériences <em>en cours</em>.</h2>
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-status active">Actif</div>
+          <h3>Prototype</h3>
+          <p>Nous développons actuellement un prototype entraîné sur des données propriétaires.</p>
+          <div class="lab-tags"><span>AI/ML</span><span>Recherche</span><span>Prototype</span></div>
+          <div class="lab-progress">
+            <div class="progress-bar" style="--w: 25%"></div>
+            <span>25%</span>
+          </div>
+        </div>
+        <div class="lab-card">
+          <div class="lab-status active">Actif</div>
+          <h3>Développement Web</h3>
+          <p>Plusieurs projets sont en incubation dans notre laboratoire.</p>
+          <div class="lab-tags"><span>Web</span><span>Pipelines de données</span><span>IA</span></div>
+          <div class="lab-progress">
+            <div class="progress-bar" style="--w: 55%"></div>
+            <span>55%</span>
+          </div>
+        </div>
+        <div class="lab-card">
+          <div class="lab-status research">Recherche</div>
+          <h3>Plateforme Expérimentale</h3>
+          <p>Projet de plateforme pour les espaces de travail numériques collaboratifs.</p>
+          <div class="lab-tags"><span>Plateforme</span><span>Temps réel</span><span>Collaboration</span></div>
+          <div class="lab-progress">
+            <div class="progress-bar" style="--w: 30%"></div>
+            <span>30%</span>
+          </div>
+        </div>
+        <div class="lab-card">
+          <div class="lab-status research">Recherche</div>
+          <h3>Infrastructure de Recherche</h3>
+          <p>Projet d'outillage interne pour la gestion des connaissances et la synthèse de recherche.</p>
+          <div class="lab-tags"><span>Infrastructure</span><span>Interne</span><span>Connaissance</span></div>
+          <div class="lab-progress">
+            <div class="progress-bar" style="--w: 5%"></div>
+            <span>5%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="img/logo/logo.png" alt="Xprofess" class="logo-img logo-img-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="logo-fallback">Xprofess</span>
+          <p>Build the future.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#" onclick="showPage('home')">Accueil</a>
+          <a href="#" onclick="showPage('studio')">Studio</a>
+          <a href="#" onclick="showPage('work')">Projets</a>
+          <a href="#" onclick="showPage('team')">Équipe</a>
+          <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Xprofess. Tous droits réservés.</span>
+        <span class="footer-tag">Studio Technologique</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== PAGE: TEAM ===================== -->
+<div class="page" id="page-team">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Équipe</span>
+      <h1 class="page-title">Les bâtisseurs du<br><em>futur</em>.</h1>
+      <p class="page-desc">Une équipe de jeunes ingénieurs et créateurs focalisés sur la création de technologies qui ont du sens.</p>
+    </div>
+    <div class="page-hero-bg"><div class="grid-overlay"></div></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="domains-grid">
+        <div class="domain-card">
+          <div class="domain-icon">⬡</div>
+          <h3>Ingénierie Logicielle</h3>
+          <p>Des ingénieurs full-stack qui construisent des systèmes robustes et évolutifs, de l'architecture backend aux interfaces pixel-perfect.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-icon">◈</div>
+          <h3>Développement Produit</h3>
+          <p>Des penseurs produit obsédés par l'expérience utilisateur, l'adéquation marché et la livraison de choses qui comptent vraiment.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-icon">⬡</div>
+          <h3>Architecture Système</h3>
+          <p>Des architectes qui conçoivent les fondations futuristes.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-icon">◈</div>
+          <h3>Recherche & Innovation</h3>
+          <p>Des chercheurs qui explorent la frontière — IA et technologies expérimentales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="manifesto">
+        <h2>Nous croyons que la meilleure<br>technologie se trouve dans le<em>futur</em>.</h2>
+        <p>Elle fonctionne simplement. Elle donne du pouvoir. Elle s'efface en arrière-plan et laisse les humains faire ce qu'ils font de mieux. C'est ce que nous construisons chez Xprofess.</p>
+        <button class="btn btn-outline" onclick="showPage('contact')">Rejoindre l'équipe →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="img/logo/logo.png" alt="Xprofess" class="logo-img logo-img-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="logo-fallback">Xprofess</span>
+          <p>Build the future.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#" onclick="showPage('home')">Accueil</a>
+          <a href="#" onclick="showPage('studio')">Studio</a>
+          <a href="#" onclick="showPage('work')">Projets</a>
+          <a href="#" onclick="showPage('lab')">Lab</a>
+          <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Xprofess. Tous droits réservés.</span>
+        <span class="footer-tag">Studio Technologique</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== PAGE: CONTACT ===================== -->
+<div class="page" id="page-contact">
+  <section class="page-hero contact-hero">
+    <div class="container">
+      <span class="section-label">Contact</span>
+      <h1 class="page-title">Construisons<br><em>quelque chose</em>.</h1>
+      <p class="page-desc">Parlez-nous de votre projet. Nous vous répondrons dans les 24 heures.</p>
+    </div>
+    <div class="page-hero-bg"><div class="grid-overlay"></div></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-form-wrap">
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label>Nom</label>
+              <input type="text" id="contact-name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="contact-email" placeholder="votre@email.com" required>
+            </div>
+            <div class="form-group">
+              <label>Idée de projet</label>
+              <textarea id="contact-idea" placeholder="Dites-nous ce que vous construisez..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Commencer à construire</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <span>✓</span> Message envoyé. Nous vous contacterons bientôt.
+            </div>
+          </form>
+        </div>
+        <div class="contact-info">
+          <h3>Contactez-nous directement</h3>
+          <p>Nous sommes joignables sur tous les canaux. Choisissez le vôtre.</p>
+          <div class="social-links">
+            <a href="mailto:xprofess01@gmail.com" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14l-7 7L3 5zm0 0v10h14V5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>xprofess01@gmail.com</span>
+            </a>
+            <a href="https://wa.me/+243802249966" target="_blank" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 00-6.93 12L2 18l4-.93A8 8 0 1010 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 9c.5 1 1.5 2.5 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://instagram.com/xprofess0?igsh=MTdtZm5xeGV4c2YOYw==" target="_blank" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="5.5" r="0.75" fill="currentColor"/></svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://x.com/xprofess" target="_blank" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 3l14 14M3 17L17 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>X (Twitter)</span>
+            </a>
+            <a href="https://linkedin.com/company/xprofess" target="_blank" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 9v5M7 7v.5M10 14v-3a2 2 0 014 0v3M10 9v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://facebook.com/profile.php?id=61572349377341" target="_blank" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 3H4a1 1 0 00-1 1v12a1 1 0 001 1h6v-5H8V9h2V7.5C10 5.6 11.1 4.5 12.9 4.5c.9 0 1.8.1 2.7.2V7h-1.8c-1 0-1.2.5-1.2 1.1V9H16l-.5 3h-2V17h3a1 1 0 001-1V4a1 1 0 00-1-1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="img/logo/logo.png" alt="Xprofess" class="logo-img logo-img-sm" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <span class="logo-fallback">Xprofess</span>
+          <p>Build the future.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#" onclick="showPage('home')">Accueil</a>
+          <a href="#" onclick="showPage('studio')">Studio</a>
+          <a href="#" onclick="showPage('work')">Projets</a>
+          <a href="#" onclick="showPage('lab')">Lab</a>
+          <a href="#" onclick="showPage('team')">Équipe</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Xprofess. Tous droits réservés.</span>
+        <span class="footer-tag">Studio Technologique</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===================== LIGHTBOX GALERIE ===================== -->
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-header">
+    <div>
+      <div class="lightbox-subtitle" id="lightbox-subtitle"></div>
+      <div class="lightbox-title" id="lightbox-title"></div>
+    </div>
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  </div>
+  <div class="lightbox-slider" id="lightbox-slider"></div>
+  <div class="lightbox-hint">← Défiler pour voir toutes les photos →</div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
