@@ -395,10 +395,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Format : 'nom-du-dossier/photo.jpg' ou URL complète
 const projectPhotos = {
   plateforme: [
-    'img/lbm/Captureaccueil.png',
-    'img/lbm/Captureactualité.png',
-    'img/lbm/Captureconnexion.png',
-    'img/lbm/Capturepublier.png'
+    'img/lbm/molakisi1.png',
+    'img/lbm/molakisi2.png',
+    'img/lbm/molakisi3.png',
+    'img/lbm/molakisi4.png',
+    'img/lbm/molakisi5.png'
     // Remplace par tes vraies photos
   ],
   logiciel: [
@@ -408,11 +409,11 @@ const projectPhotos = {
     'img/lbm/Screenshotpretbank4.png'
   ],
   startup: [
-    // Exemple : 'img/startup/screen1.png'
+    'img/lbm/terrafresh.png'
   ],
   application: [
-    'img/lbm/Screenshotkelasi.png'
-    // Exemple : 'img/application/screen1.png'
+    'img/lbm/sport1.png',
+    'img/lbm/sport2.png'
   ]
 };
 
